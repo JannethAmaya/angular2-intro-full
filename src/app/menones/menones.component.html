@@ -1,0 +1,15 @@
+<div class="8u 12u(mobile)">
+  <section>
+	  <header>
+		  <h2>Menones</h2>
+		</header>
+		<ul class="dates">
+		  <li *ngFor="let menon of menones | async">
+			  <span *ngFor="let prize of prizes" class="date"><strong>{{prize.date | date}}</strong></span>
+				<h3><a>{{menon.name}}</a></h3>
+				<p *ngIf="prize">{{prize.reason}}</p>
+        <button class="button" (click)="gotoDetails(menon)">Dar Menon de Oro</button>
+			</li>
+		</ul>
+	</section>
+</div>
